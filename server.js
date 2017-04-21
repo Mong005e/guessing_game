@@ -6,7 +6,7 @@ var bodyParser = require ('body-parser');
 var numberGen = require ('./number-module');
 
 //globals
-var max;
+var maxValue;
 
 //uses
 app.use ( express.static ( 'public' ) ); // if index.html is not in a sub folder, you do not need the app.get('/')
@@ -23,11 +23,12 @@ app.get ('/', function (req, res){
   console.log( 'base url hit');
   //send back index.html as response
 
-  console.log('random number generated: ' + numberGen(0, 100));
+
   res.sendFile (path.resolve ('public/public-index.html'));
 });  //end base url
 
 app.post('/startGame', function ( req, res ){
-  max = req.body.data;
-  console.log('received from server:', max);
+  maxValue = parseInt(req.body.max);
+  console.log('received from client:', maxValue);
+  console.log('random number generated: ' + numberGen(1, maxValue));
 });

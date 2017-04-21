@@ -1,3 +1,9 @@
 body{
   background-color: lavender
 }
+input {
+  /*display: inline;*/
+}
+p {
+  display: inline;
+}

@@ -7,8 +7,10 @@ function onReady () {
 }
 
 function startButton () {
-  var highRange = $('#drop-down').val();
-  console.log(highRange);
+  var highRange = {
+    max: $('#drop-down').val()
+  };
+  console.log('selected high range:', highRange);
 
   $.ajax({
     url: '/startGame',
