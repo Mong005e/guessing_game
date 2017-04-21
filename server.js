@@ -32,3 +32,12 @@ app.post('/startGame', function ( req, res ){
   console.log('received from client:', maxValue);
   console.log('random number generated: ' + numberGen(1, maxValue));
 });
+
+app.post('/checkGuesses', function ( req, res ){
+  var guessesObj = req.body; // req.body = objectToSend
+  console.log('received from client:', guessesObj );
+  //logic
+
+
+  res.send('meow');
+});
