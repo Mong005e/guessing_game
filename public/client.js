@@ -24,7 +24,7 @@ function startButton () {
     data: highRange,
     success: function ( response ) {
 
-      console.log('back from sever with:', response);
+      console.log('back from server with:', response);
     } //  end success
   }); // end ajax
 } // end startButton
@@ -63,7 +63,11 @@ function checkGuesses (){
       data: objectToSend,
       success: function ( response ) {
 
-        console.log('back from sever with:', response);
+        console.log('back from server with:', response);
+        $('#player-1-results').text(response.player1);
+        $('#player-2-results').text(response.player2);
+        $('#player-3-results').text(response.player3);
+        $('#player-4-results').text(response.player4);
       } //  end success
     }); // end ajax
 }
